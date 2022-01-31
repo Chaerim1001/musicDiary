@@ -100,12 +100,15 @@ img {
 }
 
 #before_btn {
-    margin-top: 10px;
     background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+
 }
 
 a{
     background-color: white;
+    font-size: 17px;
 }
 
 

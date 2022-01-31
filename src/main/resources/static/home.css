@@ -43,7 +43,7 @@ h1 {
 
 }
 
-p,footer,a,.card-body{
+p,footer,a,section, h2, .card-body{
     background-color: white;
 }
 
@@ -51,4 +51,8 @@ p,footer,a,.card-body{
     background-color: white;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.card {
+    margin-top: 17px;
 }
