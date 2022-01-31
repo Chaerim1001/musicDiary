@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&family=Nanum+Gothic+Coding:wght@700&display=swap');
+
+* {
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Gaegu', cursive;
+    background-color: #F0F8FF;
+}
+
+
+body, h1, h2 {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    min-width: fit-content;
+    background-color: #F0F8FF;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.mainbox {
+    width: 610px;
+    padding: 30px;
+    margin: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.title-box {
+    text-align: right;
+    margin-bottom: 30px;
+    background-color: white;
+
+}
+
+p,footer,a,.card-body{
+    background-color: white;
+}
+
+#diary_btn{
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}

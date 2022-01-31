@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gaegu&family=Nanum+Gothic+Coding:wght@700&display=swap');
+
+* {
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Gaegu', cursive;
+    background-color: #F0F8FF;
+}
+
+
+body, h1, h2 {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+
+body {
+    min-width: fit-content;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    background-color: white;
+}
+
+
+h2 {
+    font-size: 20px;
+    color: #282828;
+    font-weight: lighter;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 5px;
+    background-color: white;
+
+}
+
+
+.mainbox {
+    width: 610px;
+    padding: 30px;
+    margin: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+}
+
+.title-box {
+    text-align: right;
+    margin-bottom: 30px;
+    background-color: white;
+
+}
+
+section {
+    margin-bottom: 24px;
+    background-color: white;
+}
+
+textarea {
+    height: 200px;
+    background-color: white;
+}
+
+.box1 {
+    width: 400px;
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+.weather_img {
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.weather {
+    border-radius: 7px;
+    background-color: white;
+}
+
+img {
+    width: 50px;
+    background-color: white;
+}
+
+#before_btn {
+    margin-top: 10px;
+    background-color: white;
+}
+
+a{
+    background-color: white;
+}
+
+

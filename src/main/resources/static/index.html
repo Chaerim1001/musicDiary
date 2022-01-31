@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Diary</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="diary.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="mainbox">
+    <div class="title-box">
+        <h1>오늘의 나를 기록해주세요.</h1>
+        <button id="before_btn"> <a href="home.html">이전 기록 보기</a></button>
+    </div>
+
+    <section>
+        <h2>오늘 하루를 한 문장으로 표현해주세요.</h2>
+        <input type="text" class="box1" id="title" placeholder="어떤 하루를 보냈나요?">
+    </section>
+    <section>
+        <h2>오늘의 날씨는 어땠나요?</h2>
+        <div class="weather_img">
+            <button class="weather" id="img_sunny"> <img src="images/sunny.png" alt=""> </button>
+            <button class="weather" id="img_cloudy"><img src="images/cloudy.png" alt=""></button>
+            <button class="weather" id="img_rainy"><img src="images/rainy.png" alt=""></button>
+            <button class="weather" id="img_snow"><img src="images/snow.png" alt=""></button>
+        </div>
+        <input type="text" class="box1" id="weather" placeholder="직접 느낀 오늘의 날씨를 알려주세요.">
+    </section>
+    <section>
+        <h2>오늘의 기분은 어땠나요?</h2>
+        <input type="text" class="box1" id="feeling" placeholder="오늘 하루의 기분을 알려주세요.">
+    </section>
+
+    <section>
+        <h2>오늘의 기록</h2>
+        <textarea class="box1" id="contents" placeholder="오늘의 하루를 기록해주세요."></textarea>
+    </section>
+
+    <button class="btn" onclick="writeDiary()">기록하기</button>
+
+</div>
+</body>
+</html>
