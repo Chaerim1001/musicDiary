@@ -28,6 +28,12 @@ public class Diary extends Timestamped{
     @Column(nullable = false)
     private String contents;
 
+    @Column(nullable = false)
+    private String song = "";
+
+    @Column(nullable = false)
+    private String singer = "";
+
     public Diary(DiaryRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.weather = requestDto.getWeather();
