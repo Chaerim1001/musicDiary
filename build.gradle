@@ -26,8 +26,16 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'com.github.thelinmichael:spotify-web-api-java:master-SNAPSHOT'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
