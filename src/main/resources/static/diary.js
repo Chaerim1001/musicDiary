@@ -38,10 +38,6 @@ function isValidWeather(weather) { //날씨 확인 함수
     return true;
 }
 
-function imgClick(){
-
-}
-
 
 function writeDiary(){ //일기 posting
     //일기 제목 확인
@@ -81,4 +77,45 @@ function writeDiary(){ //일기 posting
             window.location.reload(); //새로고침
         }
     });
+}
+
+function showModal(){
+    $('#container').addClass('active');
+}
+
+function searchMusic(){
+    let query = $('#search').val();
+
+    if (query == '') {
+        alert('검색어를 입력해주세요');
+        $('#search').focus();
+        return;
+    }
+
+    $.ajax({
+        type: 'GET',
+        url: `/search?query=${query}`,
+        success: function (response) {
+            if(response.length <= 0) {
+               alert("검색 결과가 없습니다.")
+            }
+            else {
+                for(let i = 0; i < 3; i++){
+                    let Diary = response[i];
+                    let tempHtml = addMusic(Diary);
+                    $('.music').append(tempHtml);
+                }
+            }
+        }
+    })
+}
+
+function addMusic(MusicSearchDto){
+
+    return ` <a href="${MusicSearchDto.url}">
+                <img src="${MusicSearchDto.image}">
+                <p>${MusicSearchDto.singer}</p>
+                <p>${MusicSearchDto.album}</p>
+            </a>
+            `
 }

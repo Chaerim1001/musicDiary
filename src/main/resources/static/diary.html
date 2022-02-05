@@ -36,11 +36,31 @@
     </section>
 
     <section>
+        <h2>오늘을 표현할 수 있는 노래가 있나요?</h2>
+        <button id="searchmodal" onclick="showModal()"> 검색하기 </button>
+    </section>
+
+    <section>
         <h2>오늘의 기록</h2>
         <textarea class="box1" id="contents" placeholder="오늘의 하루를 기록해주세요."></textarea>
     </section>
 
     <button class="btn" onclick="writeDiary()">기록하기</button>
+
+    <div id="container" class="popup-container">
+        <div class="popup">
+            <button id="close" class="close">
+                X
+            </button>
+            <h1>음악을 검색해주세요.</h1>
+            <div class="search">
+                <input type="text" id="search" placeholder="검색어를 입력해주세요.">
+            </div>
+            <button class="cta" onclick="searchMusic()">검색하기</button>
+            <div class="music">
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>
