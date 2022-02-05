@@ -29,10 +29,17 @@ public class Diary extends Timestamped{
     private String contents;
 
     @Column(nullable = false)
-    private String song = "";
+    private String album = "";
 
     @Column(nullable = false)
     private String singer = "";
+
+    @Column(nullable = false)
+    private String image = "";
+
+    @Column(nullable = false)
+    private String url = "";
+
 
     public Diary(DiaryRequestDto requestDto){
         this.title = requestDto.getTitle();
