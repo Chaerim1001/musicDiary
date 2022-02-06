@@ -54,19 +54,19 @@ public class MusicSearch {
                 //앨범 이미지
                 JSONObject albums = item.getJSONObject("album");
                 JSONArray images = albums.getJSONArray("images");
-            JSONObject albumimage = images.getJSONObject(0);
-            image = albumimage.getString("url");
+                JSONObject albumimage = images.getJSONObject(0);
+                image = albumimage.getString("url");
 
             //아티스트 이름
-            JSONArray artists = item.getJSONArray("artists");
-            JSONObject artistname = artists.getJSONObject(0);
-            singer = artistname.getString("name");
+                JSONArray artists = item.getJSONArray("artists");
+                JSONObject artistname = artists.getJSONObject(0);
+                singer = artistname.getString("name");
 
             //앨범 url
-            JSONObject urls = item.getJSONObject("external_urls");
-            url = urls.getString("spotify");
+                JSONObject urls = item.getJSONObject("external_urls");
+                url = urls.getString("spotify");
 
-            searchDtoList.add(new MusicSearchDto(album,singer,image,url));
+                searchDtoList.add(new MusicSearchDto(album,singer,image,url));
         }
         return searchDtoList;
     }
