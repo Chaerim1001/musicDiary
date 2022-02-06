@@ -22,8 +22,6 @@ public class Diary extends Timestamped{
     @Column(nullable = false)
     private String weather;
 
-    @Column(nullable = false)
-    private String feeling;
 
     @Column(nullable = false)
     private String contents;
@@ -44,14 +42,12 @@ public class Diary extends Timestamped{
     public Diary(DiaryRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.weather = requestDto.getWeather();
-        this.feeling = requestDto.getFeeling();
         this.contents = requestDto.getContents();
     }
 
     public Long update(DiaryRequestDto requestDto){
         this.title = requestDto.getTitle();
         this.weather = requestDto.getWeather();
-        this.feeling = requestDto.getFeeling();
         this.contents = requestDto.getContents();
 
         return this.id;
