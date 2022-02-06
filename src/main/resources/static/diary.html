@@ -1,67 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
     <title>Diary</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script src="diary.js"></script>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-
-<div class="mainbox">
-    <div class="title-box">
-        <h1>오늘의 나를 기록해주세요.</h1>
-        <button id="before_btn"> <a href="index.html">이전 기록 보기</a></button>
-    </div>
-
-    <section>
-        <h2>오늘 하루를 한 문장으로 표현해주세요.</h2>
-        <input type="text" class="box1" id="title" placeholder="어떤 하루를 보냈나요?">
-    </section>
-    <section>
-        <h2>오늘의 날씨는 어땠나요?</h2>
-        <div class="weather_img">
-            <button class="weather" id="img_sunny"> <img src="images/sunny.png" alt=""> </button>
-            <button class="weather" id="img_cloudy"><img src="images/cloudy.png" alt=""></button>
-            <button class="weather" id="img_rainy"><img src="images/rainy.png" alt=""></button>
-            <button class="weather" id="img_snow"><img src="images/snow.png" alt=""></button>
-        </div>
-        <input type="text" class="box1" id="weather" placeholder="직접 느낀 오늘의 날씨를 알려주세요.">
-    </section>
-    <section>
-        <h2>오늘의 기분은 어땠나요?</h2>
-        <input type="text" class="box1" id="feeling" placeholder="오늘 하루의 기분을 알려주세요.">
-    </section>
-
-    <section>
-        <h2>오늘을 표현할 수 있는 노래가 있나요?</h2>
-        <button id="searchmodal" onclick="showModal()"> 검색하기 </button>
-    </section>
-
-    <section>
-        <h2>오늘의 기록</h2>
-        <textarea class="box1" id="contents" placeholder="오늘의 하루를 기록해주세요."></textarea>
-    </section>
-
-    <button class="btn" onclick="writeDiary()">기록하기</button>
-
-    <div id="container" class="popup-container">
-        <div class="popup">
-            <button id="close" class="close">
-                X
-            </button>
-            <h1>음악을 검색해주세요.</h1>
-            <div class="search">
-                <input type="text" id="search" placeholder="검색어를 입력해주세요.">
-            </div>
-            <button class="cta" onclick="searchMusic()">검색하기</button>
-            <div class="music">
-            </div>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">MusicDiary</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="diary.html">기록하기</a></li>
+            </ul>
         </div>
     </div>
+</nav>
+<!-- Header - set the background image for the header in the line below-->
+<header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+    <div class="text-center my-5">
+        <h1 class="text-white fs-3 fw-bolder m-3">나의 하루</h1>
+        <p class="text-white-50 mb-0">음악과 함께 하는 나의 하루</p>
+    </div>
+</header>
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="text-center my-5">
+                <h1 class="fs-3 fw-bolder m-3">나의 하루</h1>
+            </div>
 
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="title" placeholder="제목" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="weather" placeholder="내가 느낀 오늘의 날씨를 적어주세요." aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="음악을 검색해주세요" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+                </div>
+
+
+                <div class="form-floating">
+                    <textarea class="form-control" id="contents" placeholder="Leave a comment here"  style="height: 200px"></textarea>
+                    <label for="floatingTextarea2">어떤 하루를 보냈나요?</label>
+                </div>
+
+                <button type="button" class="btn btn-outline-secondary mt-3" onclick="writeDiary()">기록하기</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Image element - set the background image for the header in the line below-->
+<div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800')">
+    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+    <div style="height: 20rem"></div>
 </div>
+<!-- Content section-->
+<section class="py-5">
+    <div class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>당신의 하루는 모두 소중합니다.</h2>
+                <p class="lead mt-3">소중한 기억들을 음악과 함께 기록해보세요!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/diary.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
-    $("#diary_0").hide();
+    $("#empty_diary").hide();
+    $("#diaryList").hide();
     getDiary();
 });
 
@@ -10,12 +11,12 @@ function getDiary(){
         type: 'GET',
         url: '/diary',
         success: function (response) {
-            console.log(response.length)
             if(response.length <= 0) {
-                $("#diary_0").show();
+                $("#empty_diary").show();
             }
             else {
-                $("#diary_0").hide();
+                $("#empty_diary").hide();
+                $("#diaryList").show();
                 for(let i = 0; i < response.length; i++){
                     let Diary = response[i];
                     let tempHtml = addHtml(Diary);
@@ -28,16 +29,12 @@ function getDiary(){
 
 function addHtml(Diary){
     return `
-        <div class="card">
-            <div class="card-header">
-                ${Diary.modifiedAt}
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>${Diary.title}</p>
-                    <footer class="blockquote-footer"> 노래 제목</footer>
-                </blockquote>
-            </div>
+        <div class="card mb-4" style="width: 38rem;">
+            <img src="${Diary.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">${Diary.title}</p>
+                    <p>${Diary.modifiedAt}</p>
+                </div>
         </div>
     `
 

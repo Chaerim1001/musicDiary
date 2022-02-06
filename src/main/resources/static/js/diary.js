@@ -22,14 +22,6 @@ function isValidContents(contents) { //내용 확인 함수
     return true;
 }
 
-function isValidfeeling(feeling) { //기분 확인 함수
-    if (feeling === '') {
-        alert('오늘의 기분을 입력해주세요.');
-        return false;
-    }
-    return true;
-}
-
 function isValidWeather(weather) { //날씨 확인 함수
     if (weather === '') {
         alert('오늘의 날씨를 입력해주세요');
@@ -50,11 +42,6 @@ function writeDiary(){ //일기 posting
     if(!isValidContents(contents))
         return;
 
-    //기분 확인
-    let feeling = $('#feeling').val();
-    if(!isValidfeeling(feeling))
-        return;
-
     //날씨 확인
     let weather = $('#weather').val();
     if(!isValidWeather(weather))
@@ -63,7 +50,6 @@ function writeDiary(){ //일기 posting
     let data = {
         "title": title,
         "contents": contents,
-        "feeling": feeling,
         "weather": weather,
     }
 
@@ -77,45 +63,4 @@ function writeDiary(){ //일기 posting
             window.location.reload(); //새로고침
         }
     });
-}
-
-function showModal(){
-    $('#container').addClass('active');
-}
-
-function searchMusic(){
-    let query = $('#search').val();
-
-    if (query == '') {
-        alert('검색어를 입력해주세요');
-        $('#search').focus();
-        return;
-    }
-
-    $.ajax({
-        type: 'GET',
-        url: `/search?query=${query}`,
-        success: function (response) {
-            if(response.length <= 0) {
-               alert("검색 결과가 없습니다.")
-            }
-            else {
-                for(let i = 0; i < 3; i++){
-                    let Diary = response[i];
-                    let tempHtml = addMusic(Diary);
-                    $('.music').append(tempHtml);
-                }
-            }
-        }
-    })
-}
-
-function addMusic(MusicSearchDto){
-
-    return ` <a href="${MusicSearchDto.url}">
-                <img src="${MusicSearchDto.image}">
-                <p>${MusicSearchDto.singer}</p>
-                <p>${MusicSearchDto.album}</p>
-            </a>
-            `
 }
