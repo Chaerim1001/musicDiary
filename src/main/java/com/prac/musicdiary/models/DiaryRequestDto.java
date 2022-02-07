@@ -9,4 +9,8 @@ public class DiaryRequestDto {
     private final String title;
     private final String weather;
     private final String contents;
+    private final String album;
+    private final String singer;
+    private final String image;
+    private final String url;
 }

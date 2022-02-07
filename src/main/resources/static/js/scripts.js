@@ -30,12 +30,11 @@ function getDiary(){
 function addHtml(Diary){
     return `
         <div class="card mb-4" style="width: 38rem;">
-            <img src="${Diary.image}" class="card-img-top" alt="...">
+            <img src="${Diary.image}" class="card-img-top" alt="..." width="64px">
                 <div class="card-body">
                     <p class="card-text">${Diary.title}</p>
                     <p>${Diary.modifiedAt}</p>
                 </div>
         </div>
     `
-
 }

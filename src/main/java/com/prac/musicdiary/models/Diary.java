@@ -43,6 +43,10 @@ public class Diary extends Timestamped{
         this.title = requestDto.getTitle();
         this.weather = requestDto.getWeather();
         this.contents = requestDto.getContents();
+        this.album = requestDto.getAlbum();
+        this.singer = requestDto.getSinger();
+        this.image = requestDto.getImage();
+        this.url = requestDto.getUrl();
     }
 
     public Long update(DiaryRequestDto requestDto){

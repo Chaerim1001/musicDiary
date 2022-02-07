@@ -6,10 +6,10 @@ import org.json.JSONObject;
 
 @Getter
 public class MusicSearchDto {
-    private String album;
-    private String singer;
-    private String image;
-    private String url;
+    private final String album;
+    private final String singer;
+    private final String image;
+    private final String url;
 
     public MusicSearchDto(String album, String singer, String image, String url) {
         this.album = album;

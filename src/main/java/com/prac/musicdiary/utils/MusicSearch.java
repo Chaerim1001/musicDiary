@@ -54,7 +54,7 @@ public class MusicSearch {
                 //앨범 이미지
                 JSONObject albums = item.getJSONObject("album");
                 JSONArray images = albums.getJSONArray("images");
-                JSONObject albumimage = images.getJSONObject(0);
+                JSONObject albumimage = images.getJSONObject(2);
                 image = albumimage.getString("url");
 
             //아티스트 이름
