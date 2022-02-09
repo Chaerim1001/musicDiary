@@ -20,6 +20,13 @@ public class DiaryController {
         return diaryRepository.findAll();
     }
 
+    @GetMapping("/diary/{id}")
+    public Diary getDiary01(@PathVariable Long id){
+        return diaryRepository.findById(id).orElseThrow(
+                () -> new NullPointerException("해당 게시글이 존재하지 않습니다.")
+        );
+    }
+
     @PostMapping("/diary")
     public Diary createDiary(@RequestBody DiaryRequestDto requestDto){
         Diary diary = new Diary(requestDto);
