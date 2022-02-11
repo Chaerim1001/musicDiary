@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#empty_diary").hide();
     $("#diaryList").hide();
-    // $("#diaryPage").hide();
+    $("#diaryPage").hide();
     getDiary();
 });
 
@@ -98,10 +98,18 @@ function addPage(Diary){
                 <button type="button" class="btn btn-outline-secondary mt-3" onclick="deleteDiary(${Diary.id})">삭제하기</button>
     `
 }
+
 function updateDiary(id){
     //다이어리 수정
 }
 
 function deleteDiary(id){
-    //다이어리 삭제
+    $.ajax({
+        type: "DELETE",
+        url: `/diary/${id}`,
+        success: function (response) {
+            alert('기록이 삭제되었습니다.');
+            window.location.reload();
+        }
+    })
 }
