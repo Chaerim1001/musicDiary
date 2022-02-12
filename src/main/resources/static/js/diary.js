@@ -159,3 +159,29 @@ function addMusic(searchDto){
       <b> ${searchDto.singer}   ${searchDto.album} </b>
       </div>`
 }
+
+
+function updateDiary(id){
+    //다이어리 수정
+
+    let data = {
+        "title": $('#title').val(),
+        "contents": $('#contents').val(),
+        "weather": $('#weather').val(),
+        "album": musicResponse[count].album,
+        "singer": musicResponse[count].singer,
+        "image": musicResponse[count].image,
+        "url": musicResponse[count].url
+    }
+
+    $.ajax({
+        type: "PUT",
+        url: `/diary/${id}`,
+        contentType: "application/json",
+        data: JSON.stringify(data),
+        success: function (response) {
+            alert('기록이 수정되었습니다.');
+            window.location.reload();
+        }
+    })
+}
